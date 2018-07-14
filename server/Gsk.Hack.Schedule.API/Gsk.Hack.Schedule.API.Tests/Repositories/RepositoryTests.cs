@@ -26,8 +26,8 @@ namespace Gsk.Hack.Schedule.API.Tests.Repositories
         {
             using (MySqlRepository repository = new MySqlRepository())
             {
-                int rooms = repository.GetNumberOfRoomsAvailable();
-                Assert.AreEqual(2, rooms);
+                var resources = repository.GetNumberOfResources(1);
+                Assert.AreEqual(0, 1);
             }
         }
     }

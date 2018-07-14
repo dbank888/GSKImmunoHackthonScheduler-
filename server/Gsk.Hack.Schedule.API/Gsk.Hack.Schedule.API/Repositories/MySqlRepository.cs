@@ -49,25 +49,29 @@ namespace Gsk.Hack.Schedule.API.Repositories
             return recommendations;
         }
 
-        public int GetNumberOfRoomsAvailable()
+        public List<DateTime> GetNumberOfResources(int resourcesNeeded)
         {
-            int numberOfRooms = 0;
+            List<DateTime> times = new List<DateTime>();
 
-            string sql = "SELECT COUNT(*) as num_rooms_available FROM public.schedule WHERE timestamp = '2018-08-06Z09:00:00' AND is_available";
-            //string sql = "SELECT * FROM TEST WHERE Name='@Name'";
+            string sql = "SELECT timestamp FROM public.schedule WHERE num_resources_available >= @resourcesNeeded ORDER BY timestamp";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
-            //cmd.Parameters.AddWithValue("@Name", name);
+            cmd.Parameters.AddWithValue("@resourcesNeeded", resourcesNeeded);
 
-
+            
             MySqlDataReader rdr = cmd.ExecuteReader();
             while (rdr.Read())
             {
-                Int32.TryParse(rdr[0].ToString(), out numberOfRooms);
+                string timeStamp = rdr[0].ToString();
+                DateTime dateTime;
+                if(DateTime.TryParse(timeStamp, out dateTime))
+                {
+                    times.Add(dateTime);
+                }
             }
             
             rdr.Close();
 
-            return numberOfRooms;
+            return times;
             
         }
     }
