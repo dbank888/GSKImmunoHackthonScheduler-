@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar style={styles.bdColor} light expand="md">
           <NavbarBrand href="/">Twobirds</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
             <Nav className="ml-auto" navbar>
@@ -47,5 +47,11 @@ class App extends Component {
     );
   }
 }
+
+var styles = {
+    bdColor: {
+      backgroundColor: "#50E3C2"
+    }
+};
 
 export default App;
