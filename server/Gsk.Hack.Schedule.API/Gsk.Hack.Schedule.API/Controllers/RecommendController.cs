@@ -1,4 +1,5 @@
 ﻿using Gsk.Hack.Schedule.API.Models;
+using Gsk.Hack.Schedule.API.Repositories;
 using System;
 using System.Web.Http;
 
@@ -11,17 +12,26 @@ namespace Gsk.Hack.Schedule.API.Controllers
         [Route("recommend")]
         public IHttpActionResult Recommend(RecommendRequest request)
         {
-            DateTime appointmentTime;
+            try
+            {
+                DateTime appointmentTime;
 
-            if (DateTime.TryParse(request.ApointmentTime, out appointmentTime))
-            {
-                return Ok(request.CallerName + " made an appointment for " + request.PatientName + " at " 
-                + appointmentTime.Hour + " O'Clock on " +
-                appointmentTime.DayOfWeek + " " + appointmentTime.Month + " " + appointmentTime.Day);
+                if (DateTime.TryParse(request.ApointmentTime, out appointmentTime))
+                {
+                    using (MySqlRepository repository = new MySqlRepository())
+                    {
+                        var results = repository.GetVaccines(request.CallerName);
+                        return Ok(results);
+                    }
+                }
+                else
+                {
+                    return BadRequest("Could not parse date time");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return BadRequest("Could not parse date time");
+                return InternalServerError(ex);
             }  
         }
     }

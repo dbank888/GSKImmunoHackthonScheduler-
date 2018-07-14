@@ -14,8 +14,21 @@ namespace Gsk.Hack.Schedule.API.Tests.Repositories
         [TestMethod]
         public void GetVaccines_ReadsFromTestTable_ShouldSucceed()
         {
-            MySqlRepository repository = new MySqlRepository();
-            repository.GetVaccines("Pat");
+            using (MySqlRepository repository = new MySqlRepository())
+            {
+                var recommendations = repository.GetVaccines("Margaret-Ann_De_Luca");
+                Assert.IsTrue(recommendations.Count >= 8);
+            }
+        }
+
+        [TestMethod]
+        public void GetNumberOfRoomsAvailable_GetsMaxAvailableRooms_returnsInt()
+        {
+            using (MySqlRepository repository = new MySqlRepository())
+            {
+                int rooms = repository.GetNumberOfRoomsAvailable();
+                Assert.AreEqual(2, rooms);
+            }
         }
     }
 }
