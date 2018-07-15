@@ -76,7 +76,7 @@ class Patient extends Component {
          <Button outline className="backButton2" size="lg">Back</Button>
         </Form>
         <Form onSubmit={this.onSubmit}>
-         <Button outline className="proceedButton" size="lg">Proceed</Button>
+         <Button outline className="proceedButton" size="lg">Next</Button>
         </Form>
         </StickyFooter>
       </div>

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Form } from 'reactstrap';
-import calendar from'./calendar.png';
-import axios from 'axios';
+import calendar from'./confirmation.png';
 import {
   Navbar,
   NavbarToggler,
@@ -14,39 +13,27 @@ import {
 import StickyFooter from 'react-sticky-footer';
 
 
-class Scheduler extends Component {
-	constructor(){
-		super();
-		this.onSubmitBack = this.onSubmitBack.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
+class Confirmation extends Component {
+  constructor(){
+    super();
+    this.onSubmitBack = this.onSubmitBack.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.state={
       fname: "",
       lname: ""
     }
   }
-  componentDidMount() {
-		console.log("Component Did mount Called");
-	
-        var headers = {
-            'Content-Type': 'application/json'
-        }
-        axios.get('http://gskhackathon.azurewebsites.net/api/schedule/resources?names=pat,nick', null, headers)
-          .then(res => {
-            debugger;
-            console.log("Component Did mount Called");
-         }); 
-     }
-	onSubmitBack(event){
-	   event.preventDefault();
+  onSubmitBack(event){
+     event.preventDefault();
        this.props.history.push('/patient')
-	}
-	onSubmit(event){
+  }
+  onSubmit(event){
 
       event.preventDefault();  
        this.props.history.push('/confirmation')  
-	 }
-	render(){
-		return(
+   }
+  render(){
+    return(
        <div className="backC">
         <Navbar style={styles.bdColor} light expand="md">
           <NavbarBrand href="/">Twobirds</NavbarBrand>
@@ -72,7 +59,7 @@ class Scheduler extends Component {
            }}
           /> 
          </div>
-        <img  src={calendar} style={{width:"52%", marginLeft: "27%", marginTop: "-55%"}} alt="twoBirds"/>
+        <img  src={calendar} style={{width:"72%", marginLeft: "27%", marginTop: "-44%"}} alt="twoBirds"/>
         <StickyFooter
           bottomThreshold={50}
           normalStyles={{
@@ -89,12 +76,12 @@ class Scheduler extends Component {
         </Form>
         <Form onSubmit={this.onSubmit}>
 
-         <Button outline className="submitButton2" size="lg">Next</Button>
+         <Button outline className="submitButton2" size="lg">Submit</Button>
         </Form>
         </StickyFooter>
       </div>
-	  );
-	}
+    );
+  }
 }
 
 var styles = {
@@ -104,4 +91,4 @@ var styles = {
 };
 
 
-export default Scheduler;
+export default Confirmation;
