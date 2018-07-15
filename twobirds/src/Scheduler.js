@@ -28,7 +28,9 @@ class Scheduler extends Component {
        this.props.history.push('/patient')
 	}
 	onSubmit(event){
-      event.preventDefault();    
+
+      event.preventDefault();  
+       this.props.history.push('/confirmation')  
 	 }
 	render(){
 		return(
@@ -57,7 +59,7 @@ class Scheduler extends Component {
            }}
           /> 
          </div>
-        <img  src={calendar} style={{width:"52%", marginLeft: "27%", marginTop: "-43%"}} alt="twoBirds"/>
+        <img  src={calendar} style={{width:"52%", marginLeft: "27%", marginTop: "-55%"}} alt="twoBirds"/>
         <StickyFooter
           bottomThreshold={50}
           normalStyles={{
@@ -73,7 +75,8 @@ class Scheduler extends Component {
          <Button outline className="backButton3" size="lg">Back</Button>
         </Form>
         <Form onSubmit={this.onSubmit}>
-         <Button outline className="submitButton2" size="lg">Submit</Button>
+
+         <Button outline className="submitButton2" size="lg">Next</Button>
         </Form>
         </StickyFooter>
       </div>

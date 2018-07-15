@@ -50,7 +50,7 @@ class PatientInfo extends Component {
            }}
          /> 
          <div className="customCard2">
-           <h3 style={{marginTop: "1%", textAlign: "center", color: "#50E3C2", textDecoration: "underline"}}>Records Found</h3>
+           <h3 style={{marginTop: "5%", marginBottom: "3%", textAlign: "center", color: "#50E3C2", textDecoration: "underline"}}>Records Found</h3>
 		  <div className="customCards">
              <Card>
               <CardImg top width="100%" src={patient1} alt="Card image cap" /> 
@@ -64,7 +64,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                 </InputGroupAddon>
-               <Input placeholder="hpv, influenza" />
+               <Input placeholder="HPV" />
               </InputGroup> 
                <br />
               <InputGroup>
@@ -73,7 +73,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                  </InputGroupAddon>
-                 <Input placeholder="pneumococcal infection" />
+                 <Input placeholder="Pneumococcal Infection" />
               </InputGroup> 
                 <br />
               <InputGroup>
@@ -82,12 +82,12 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                  </InputGroupAddon>
-                 <Input placeholder="hepatitis b" />
+                 <Input placeholder="Hepatitis B" />
               </InputGroup>  
              </CardBody>
             </Card>
 		   </div>
-           <h3 style={{marginTop: "2%",marginBottom: "1%", textAlign: "center", color: "#50E3C2", textDecoration: "underline"}}>Family Tree</h3>
+           <h3 style={{marginTop: "6%",marginBottom: "3%", textAlign: "center", color: "#50E3C2", textDecoration: "underline"}}>Family Tree</h3>
 		    <div className="customCards">
              <Card>
               <CardImg top width="100%" src={patient2} alt="Card image cap" /> 
@@ -101,7 +101,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                 </InputGroupAddon>
-               <Input placeholder="hpv, influenza" />
+               <Input placeholder="HPV" />
               </InputGroup> 
                <br />
               <InputGroup>
@@ -110,7 +110,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                  </InputGroupAddon>
-                 <Input placeholder="pneumococcal infection" />
+                 <Input placeholder="Pneumococcal Infection" />
               </InputGroup> 
                 <br />
               <InputGroup>
@@ -119,7 +119,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                  </InputGroupAddon>
-                 <Input placeholder="hepatitis b" />
+                 <Input placeholder="Hepatitis B" />
               </InputGroup>  
              </CardBody>
             </Card>
@@ -137,7 +137,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                 </InputGroupAddon>
-               <Input placeholder="hpv, influenza" />
+               <Input placeholder="HPV" />
               </InputGroup> 
                <br />
               <InputGroup>
@@ -146,7 +146,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                  </InputGroupAddon>
-                 <Input placeholder="pneumococcal infection" />
+                 <Input placeholder="Pneumococcal Infection" />
               </InputGroup> 
                 <br />
               <InputGroup>
@@ -155,7 +155,7 @@ class PatientInfo extends Component {
                  <Input addon type="checkbox" aria-label="Checkbox for following text input" />
                  </InputGroupText>
                  </InputGroupAddon>
-                 <Input placeholder="hepatitis b" />
+                 <Input placeholder="Hepatitis B" />
               </InputGroup>  
              </CardBody>
             </Card>

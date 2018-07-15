@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Form } from 'reactstrap';
-import $ from 'jquery';
+import calendar from'./confirmation.png';
 import {
   Navbar,
   NavbarToggler,
@@ -11,42 +11,29 @@ import {
   NavLink,
   Button} from 'reactstrap';
 import StickyFooter from 'react-sticky-footer';
-import PatientInfo from './PatientInfo';
 
-class Patient extends Component {
-	constructor(){
-		super();
-		this.onSubmitBack = this.onSubmitBack.bind(this);
-		this.onSubmit = this.onSubmit.bind(this);
+
+class Confirmation extends Component {
+  constructor(){
+    super();
+    this.onSubmitBack = this.onSubmitBack.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.state={
       fname: "",
       lname: ""
     }
-	}
-	onSubmitBack(event){
-	   event.preventDefault();
-       this.props.history.push('/dashboard')
-	}
-	onSubmit(event){
-      event.preventDefault();
-      this.props.history.push('/scheduler')
-       var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "http://gskhackathon.azurewebsites.net/api/schedule/resources?names=Jim,Mat",
-            "method": "GET",
-            "headers": {
-                "Access-Control-Allow-Origin":"*",
-                "Content-Type": "application/json",
-                "Cache-Control": "no-cache"
-            }
-        };
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });     
-	 }
-	render(){
-		return(
+  }
+  onSubmitBack(event){
+     event.preventDefault();
+       this.props.history.push('/patient')
+  }
+  onSubmit(event){
+
+      event.preventDefault();  
+       this.props.history.push('/confirmation')  
+   }
+  render(){
+    return(
        <div className="backC">
         <Navbar style={styles.bdColor} light expand="md">
           <NavbarBrand href="/">Twobirds</NavbarBrand>
@@ -56,11 +43,23 @@ class Patient extends Component {
                 <NavLink href="#">Welcome Back, Taylor Lee</NavLink>
               </NavItem>
               <NavItem>
-                 <NavLink href="/">Sign Out</NavLink>
+                <NavLink href="/">Sign Out</NavLink>
               </NavItem>
             </Nav>
         </Navbar>
-        <PatientInfo />
+         <div className="form">
+         <div
+          style = {{
+            marginTop: "10px",
+            marginBottom: "10px",
+            marginLeft: "200px",
+            height: "500px",
+            width: 3,
+            backgroundColor: '#50E3C2'
+           }}
+          /> 
+         </div>
+        <img  src={calendar} style={{width:"72%", marginLeft: "27%", marginTop: "-44%"}} alt="twoBirds"/>
         <StickyFooter
           bottomThreshold={50}
           normalStyles={{
@@ -73,15 +72,16 @@ class Patient extends Component {
           }}
         >
         <Form onSubmit={this.onSubmitBack}>
-         <Button outline className="backButton2" size="lg">Back</Button>
+         <Button outline className="backButton3" size="lg">Back</Button>
         </Form>
         <Form onSubmit={this.onSubmit}>
-         <Button outline className="proceedButton" size="lg">Next</Button>
+
+         <Button outline className="submitButton2" size="lg">Submit</Button>
         </Form>
         </StickyFooter>
       </div>
-	  );
-	}
+    );
+  }
 }
 
 var styles = {
@@ -91,4 +91,4 @@ var styles = {
 };
 
 
-export default Patient;
+export default Confirmation;
