@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div className="backC">
         <Navbar style={styles.bdColor} light expand="md">
-          <NavbarBrand href="/">Twobirds</NavbarBrand>
+          <NavbarBrand href="/">twobirds</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
             <Nav className="ml-auto" navbar>
               <NavItem>
@@ -60,11 +60,11 @@ class App extends Component {
           }}
           stickyStyles={{
           backgroundColor: "rgba(255,255,255,.8)",
-          padding: "2rem"
+          padding: "1rem"
           }}
         >
         <Form onSubmit={this.onSubmit}>
-         <Button outline className="submitButton" size="lg">Submit</Button>
+         <Button outline className="submitButton" size="lg">Next</Button>
         </Form>
         </StickyFooter>
       </div>
@@ -74,7 +74,8 @@ class App extends Component {
 
 var styles = {
     bdColor: {
-      backgroundColor: "#50E3C2"
+      backgroundColor: "#50E3C2",
+      color: "#FFFFFF"
     }
 };
 

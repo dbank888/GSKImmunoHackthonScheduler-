@@ -55,6 +55,29 @@
   margin-left: 85%;
 }
 
+.card{
+    width: 30%;
+    height: 30%;
+}
+
+.customCards {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-left: -5%;
+    margin-top: 2%;
+}
+.imageText{
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.navbar-brand {
+    color: #FFFFFF !important;
+  }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
