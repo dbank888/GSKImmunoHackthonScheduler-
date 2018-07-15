@@ -26,13 +26,15 @@ class PatientInfo extends Component {
 		console.log("Component Did mount Called");
 		var data = {
           "CallerName": "Margaret-Ann_De_Luca",
-          "PatientName": "Jane_De_Luca"
+          "PatientName": "Jane_De_Luca",
+          "ApointmentTime": "2018-08-06Z09:00:00"
         }
         var headers = {
             'Content-Type': 'application/json'
         }
-        axios.get('http://gskhackathon.azurewebsites.net/api/schedule/recommend', data, headers)
+        axios.post('http://gskhackathon.azurewebsites.net/api/schedule/recommend', data, headers)
           .then(res => {
+            debugger;
             console.log("Component Did mount Called");
          }); 
      }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Form } from 'reactstrap';
 import calendar from'./calendar.png';
+import axios from 'axios';
 import {
   Navbar,
   NavbarToggler,
@@ -22,7 +23,19 @@ class Scheduler extends Component {
       fname: "",
       lname: ""
     }
-	}
+  }
+  componentDidMount() {
+		console.log("Component Did mount Called");
+	
+        var headers = {
+            'Content-Type': 'application/json'
+        }
+        axios.get('http://gskhackathon.azurewebsites.net/api/schedule/resources?names=pat,nick', null, headers)
+          .then(res => {
+            debugger;
+            console.log("Component Did mount Called");
+         }); 
+     }
 	onSubmitBack(event){
 	   event.preventDefault();
        this.props.history.push('/patient')
