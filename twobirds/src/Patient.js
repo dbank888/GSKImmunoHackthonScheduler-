@@ -1,44 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Form } from 'reactstrap';
-import FormCompoent from './Form';
 import {
-  Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
   NavLink,
-  Button,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Button} from 'reactstrap';
 import StickyFooter from 'react-sticky-footer';
+import PatientInfo from './PatientInfo';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.onSubmit=this.onSubmit.bind(this);
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-  onSubmit(event) {
-    event.preventDefault();
-    console.log("submit clicked");
-    this.props.history.push('/patient')
-  }
-  render() {
-    return (
-      <div className="backC">
+class Patient extends Component {
+	render(){
+		return(
+       <div className="backC">
         <Navbar style={styles.bdColor} light expand="md">
           <NavbarBrand href="/">Twobirds</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
@@ -51,7 +28,7 @@ class App extends Component {
               </NavItem>
             </Nav>
         </Navbar>
-        <FormCompoent />
+        <PatientInfo />
         <StickyFooter
           bottomThreshold={50}
           normalStyles={{
@@ -64,12 +41,12 @@ class App extends Component {
           }}
         >
         <Form onSubmit={this.onSubmit}>
-         <Button outline className="submitButton" size="lg">Submit</Button>
+         <Button outline className="submitButton" size="lg">Proceed</Button>
         </Form>
         </StickyFooter>
       </div>
-    );
-  }
+	  );
+	}
 }
 
 var styles = {
@@ -78,4 +55,5 @@ var styles = {
     }
 };
 
-export default App;
+
+export default Patient;
