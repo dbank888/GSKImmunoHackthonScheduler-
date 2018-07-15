@@ -3,18 +3,13 @@ import './App.css';
 import { Form } from 'reactstrap';
 import FormCompoent from './Form';
 import {
-  Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
   NavLink,
-  Button,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  Button } from 'reactstrap';
 import StickyFooter from 'react-sticky-footer';
 
 class App extends Component {
@@ -47,7 +42,7 @@ class App extends Component {
                 <NavLink href="#">Welcome Back, Margaret</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">Sign Out</NavLink>
+                 <NavLink href="/">Sign Out</NavLink>
               </NavItem>
             </Nav>
         </Navbar>

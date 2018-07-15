@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Form } from 'reactstrap';
 import LoginComponent from './LoginForm';
 import {
-  Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Button,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
-import StickyFooter from 'react-sticky-footer';
+  NavbarBrand } from 'reactstrap';
+
 
 class App extends Component {
   constructor(props) {

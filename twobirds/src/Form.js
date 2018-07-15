@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, FormGroup, Label, Input} from 'reactstrap';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
 class FormComponent extends Component{
    constructor(){
       super();

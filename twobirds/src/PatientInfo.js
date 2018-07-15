@@ -1,27 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Form } from 'reactstrap';
-import FormCompoent from './Form';
 import patient1 from'./patient1.png';
 import patient2 from'./patient2.png';
 import patient3 from'./patient3.png';
 import axios from 'axios';
 
 import {
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle,
-  Button,
+  Card, 
+  CardImg,
+  CardBody,
+  CardTitle,
   InputGroup,
   InputGroupAddon, 
   InputGroupText, 
   Input } from 'reactstrap';
-import StickyFooter from 'react-sticky-footer';
 
 class PatientInfo extends Component {
 	constructor(){
