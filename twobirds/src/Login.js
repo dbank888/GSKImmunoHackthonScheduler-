@@ -41,14 +41,6 @@ class App extends Component {
         <Navbar style={styles.bdColor} light expand="md">
           <NavbarBrand href="/">twobirds</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="#">Welcome Back, Taylor Lee</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#">Sign Out</NavLink>
-              </NavItem>
-            </Nav>
         </Navbar>
         <LoginComponent />
       </div>

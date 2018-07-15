@@ -44,7 +44,7 @@ class App extends Component {
           <NavbarToggler onClick={this.toggle} />
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="#">Welcome Back, Taylor Lee</NavLink>
+                <NavLink href="#">Welcome Back, Margaret</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#">Sign Out</NavLink>
@@ -66,9 +66,9 @@ class App extends Component {
         <Form onSubmit={this.onSubmitBack}>
          <p outline className="backButton">&copy; TwoBirds Inc.</p>
         </Form>
-        <Form onSubmit={this.onSubmit}>
-         <Button outline className="submitButton" size="lg">Next</Button>
-        </Form>
+         <Form onSubmit={this.onSubmit}>
+          <Button outline className="submitButton" size="lg">Next</Button>
+         </Form>
         </StickyFooter>
       </div>
     );
