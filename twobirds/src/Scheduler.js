@@ -72,7 +72,7 @@ class Scheduler extends Component {
            }}
           /> 
          </div>
-        <img  src={calendar} style={{width:"52%", marginLeft: "27%", marginTop: "-55%"}} alt="twoBirds"/>
+        <img  src={calendar} style={{width:"52%", marginLeft: "27%", marginTop: "-41%"}} alt="twoBirds"/>
         <StickyFooter
           bottomThreshold={50}
           normalStyles={{
@@ -81,7 +81,7 @@ class Scheduler extends Component {
           }}
           stickyStyles={{
           backgroundColor: "rgba(255,255,255,.8)",
-          padding: "2rem"
+          padding: "1rem"
           }}
         >
         <Form onSubmit={this.onSubmitBack}>
