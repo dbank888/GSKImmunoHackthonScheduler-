@@ -13,6 +13,19 @@ import StickyFooter from 'react-sticky-footer';
 import PatientInfo from './PatientInfo';
 
 class Patient extends Component {
+	constructor(){
+		super();
+		this.onSubmitBack = this.onSubmitBack.bind(this);
+		this.onSubmit = this.onSubmit.bind(this);
+	}
+	onSubmitBack(event){
+	   event.preventDefault();
+       this.props.history.push('/')
+	}
+	onSubmit(event){
+       event.preventDefault();
+       this.props.history.push('/')
+	}
 	render(){
 		return(
        <div className="backC">
@@ -40,8 +53,11 @@ class Patient extends Component {
           padding: "2rem"
           }}
         >
+        <Form onSubmit={this.onSubmitBack}>
+         <Button outline className="backButton" size="lg">Back</Button>
+        </Form>
         <Form onSubmit={this.onSubmit}>
-         <Button outline className="submitButton" size="lg">Proceed</Button>
+         <Button outline className="proceedButton" size="lg">Proceed</Button>
         </Form>
         </StickyFooter>
       </div>

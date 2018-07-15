@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Form } from 'reactstrap';
-import FormCompoent from './Form';
+import LoginComponent from './LoginForm';
 import {
   Collapse,
   Navbar,
@@ -20,7 +20,6 @@ import StickyFooter from 'react-sticky-footer';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.onSubmit=this.onSubmit.bind(this);
     this.toggle = this.toggle.bind(this);
     this.state = {
       isOpen: false
@@ -34,7 +33,7 @@ class App extends Component {
   onSubmit(event) {
     event.preventDefault();
     console.log("submit clicked");
-    this.props.history.push('/patient')
+    this.props.history.push('/dashboard')
   }
   render() {
     return (
@@ -51,25 +50,7 @@ class App extends Component {
               </NavItem>
             </Nav>
         </Navbar>
-        <FormCompoent />
-        <StickyFooter
-          bottomThreshold={50}
-          normalStyles={{
-          backgroundColor: "#50E3C2",
-          padding: "1rem"
-          }}
-          stickyStyles={{
-          backgroundColor: "rgba(255,255,255,.8)",
-          padding: "1rem"
-          }}
-        >
-        <Form onSubmit={this.onSubmitBack}>
-         <p outline className="backButton">&copy; TwoBirds Inc.</p>
-        </Form>
-        <Form onSubmit={this.onSubmit}>
-         <Button outline className="submitButton" size="lg">Next</Button>
-        </Form>
-        </StickyFooter>
+        <LoginComponent />
       </div>
     );
   }
