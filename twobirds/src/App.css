@@ -22,8 +22,28 @@
   font-size: large;
 }
 
-.bg-light{
-  background-color: #50E3C2 !important;
+.name{
+  color: #50E3C2;
+  font-style: normal;
+  font-family: "AvenirNext-Medium";
+  font-size: 1.2em;
+}
+
+.backC{
+  background-color: #F2f2f2 ;  
+}
+
+.submitButton{
+  background-color: transparent;
+}
+.form{
+  display: flex;
+  flex-direction: row;
+}
+
+.form h1{
+  padding-left: 20px;
+  padding-top: 50px;
 }
 
 @keyframes App-logo-spin {
