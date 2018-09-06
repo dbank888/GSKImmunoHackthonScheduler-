@@ -200,9 +200,34 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\EpicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RecommendController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Epic\Responses\AccessResponse.cs" />
+    <Compile Include="Epic\Auth\EpicOathManager.cs" />
+    <Compile Include="Epic\Model\Address.cs" />
+    <Compile Include="Epic\Responses\AuthMetaDataResponse.cs" />
+    <Compile Include="Epic\Model\CareProvider.cs" />
+    <Compile Include="Epic\Model\Coding.cs" />
+    <Compile Include="Epic\Model\Communication.cs" />
+    <Compile Include="Epic\Model\Extension.cs" />
+    <Compile Include="Epic\Model\Identifier.cs" />
+    <Compile Include="Epic\Model\Interaction.cs" />
+    <Compile Include="Epic\Model\Language.cs" />
+    <Compile Include="Epic\Model\MaritalStatus.cs" />
+    <Compile Include="Epic\Model\Name.cs" />
+    <Compile Include="Epic\Responses\PatientResponse.cs" />
+    <Compile Include="Epic\Model\Period.cs" />
+    <Compile Include="Epic\Model\Resource.cs" />
+    <Compile Include="Epic\Model\Rest.cs" />
+    <Compile Include="Epic\Model\SearchParam.cs" />
+    <Compile Include="Epic\Model\Security.cs" />
+    <Compile Include="Epic\Model\Service.cs" />
+    <Compile Include="Epic\Model\Software.cs" />
+    <Compile Include="Epic\Model\Telecom.cs" />
+    <Compile Include="Epic\Model\ValueCodeableConcept.cs" />
+    <Compile Include="Epic\Requests\AccessTokenRequest.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -281,6 +306,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\libs\httpclient.net\Aaks.Restclient\Aaks.Restclient.csproj">
+      <Project>{9a3a0cd0-4198-42d9-9072-fcfede6703f2}</Project>
+      <Name>Aaks.Restclient</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

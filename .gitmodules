@@ -1,0 +1,3 @@
+[submodule "server/libs/httpclient.net"]
+	path = server/libs/httpclient.net
+	url = https://github.com/palburtus/httpclient.net.git
