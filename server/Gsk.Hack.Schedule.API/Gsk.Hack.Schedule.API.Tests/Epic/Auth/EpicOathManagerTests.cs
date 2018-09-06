@@ -29,7 +29,7 @@ namespace Gsk.Hack.Schedule.API.Tests.Epic.Auth
         }
 
         [TestMethod]
-        public void GetPatientData()
+        public void FetchPatientData()
         {
             const string accessToken =
                 "uShtU44RfkfZnaWDmZWzNgkgNaY5OekraIuT8pHiMafL758peIxg2APdQJQ-02mMQ3omnly30b3P6ub4NTOe4Rvdp-UziAa5DVyxkd2cBVcd3Z72yo6wDe75JbpY3o1I";
@@ -74,7 +74,50 @@ namespace Gsk.Hack.Schedule.API.Tests.Epic.Auth
             Assert.AreEqual("2011-08-04T00:00:00Z", result.address[1].period.start);
             Assert.AreEqual("2014-08-04T00:00:00Z", result.address[1].period.end);
 
+            Assert.AreEqual("phone", result.telecom[0].system);
+            Assert.AreEqual("608-771-9000", result.telecom[0].value);
+            Assert.AreEqual("home", result.telecom[0].use);
+
+            Assert.AreEqual("phone", result.telecom[1].system);
+            Assert.AreEqual("608-771-9000", result.telecom[1].value);
+            Assert.AreEqual("work", result.telecom[1].use);
+
+            Assert.AreEqual("fax", result.telecom[2].system);
+            Assert.AreEqual("608-771-9000", result.telecom[2].value);
+            Assert.AreEqual("home", result.telecom[2].use);
+
+            Assert.AreEqual("phone", result.telecom[3].system);
+            Assert.AreEqual("608-771-9000", result.telecom[3].value);
+            Assert.AreEqual("temp", result.telecom[3].use);
+            Assert.AreEqual("2011-08-04T00:00:00Z", result.address[3].period.start);
+            Assert.AreEqual("2014-08-04T00:00:00Z", result.address[3].period.end);
+
+            Assert.AreEqual("email", result.telecom[4].system);
+            Assert.AreEqual("open@epic.com", result.telecom[4].value);
+
+            Assert.AreEqual("Single", result.maritalStatus.text);
+            Assert.AreEqual("http://hl7.org/fhir/ValueSet/marital-status", result.maritalStatus.coding[0].system);
+            Assert.AreEqual("S", result.maritalStatus.coding[0].code);
+            Assert.AreEqual("Never Maried", result.maritalStatus.coding[0].display);
+
+            Assert.IsTrue(result.communication[0].preferred);
+            Assert.AreEqual("English", result.communication[0].language.text);
+            Assert.AreEqual("urn:oid:2.16.840.1.113883.6.99", result.communication[0].language.coding[0].system);
+            Assert.AreEqual("en", result.communication[0].language.coding[0].code);
+            Assert.AreEqual("English", result.communication[0].language.coding[0].display);
+
+            Assert.AreEqual("http://hl7.org/fhir/StructureDefinition/us-core-race", result.extension[0].url);
+        }
+
+        [TestMethod]
+        public void FetchSchedulingData()
+        {
+            const string accessToken =
+                "GkD14Z4tHlwzrPtmWdgg-VC1czb0J5_sVyz1hNrQzQVhqX-Y-TmMO43cNcL3LPx3TP8g1X_wA2ci6K2PH5NGhsz4gxNZCi1j8Bmj4ddLxsytYbIYPN6622agKt1XOPj3";
+
+            var manager = new EpicOathManager();
+            var result = manager.FetchSchedulingData(accessToken);
+
         }
     }
-
 }

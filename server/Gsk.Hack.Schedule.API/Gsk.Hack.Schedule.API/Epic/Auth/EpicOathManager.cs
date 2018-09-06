@@ -73,5 +73,26 @@ namespace Gsk.Hack.Schedule.API.Epic.Auth
                 return null;
             }
         }
+
+        public string FetchSchedulingData(string accessToken)
+        {
+            const string patientUrl = "https://open-ic.epic.com/argonaut/api/FHIR/Argonaut/Practitioner/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB";
+
+            Dictionary<string, string> headers = new Dictionary<string, string>();
+            headers.Add("Authorization", "Bearer " + accessToken);
+
+            var client = new HttpRestClient();
+            var response = client.Get<string>(patientUrl, headers);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return response.Body;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
     }
 }
