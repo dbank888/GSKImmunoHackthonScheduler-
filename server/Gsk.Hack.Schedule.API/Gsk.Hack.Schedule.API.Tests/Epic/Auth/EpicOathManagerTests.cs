@@ -110,13 +110,13 @@ namespace Gsk.Hack.Schedule.API.Tests.Epic.Auth
         }
 
         [TestMethod]
-        public void FetchSchedulingData()
+        public void FetchImmunizationData()
         {
             const string accessToken =
-                "GkD14Z4tHlwzrPtmWdgg-VC1czb0J5_sVyz1hNrQzQVhqX-Y-TmMO43cNcL3LPx3TP8g1X_wA2ci6K2PH5NGhsz4gxNZCi1j8Bmj4ddLxsytYbIYPN6622agKt1XOPj3";
+                "bCkrSKYdhWEJGn9nW_HxkKKs89vFimcIxSU3eYBD2xx_jLtyAXfjodSgA9obuHIZDR1mRWTtVKWsVedJyfG3vh0HnjNPkwebeEBnUHhCs2DaTua91stupZSoGIdRtgSU";
 
             var manager = new EpicOathManager();
-            var result = manager.FetchSchedulingData(accessToken);
+            var result = manager.FetchImmunizationData(accessToken);
 
         }
     }

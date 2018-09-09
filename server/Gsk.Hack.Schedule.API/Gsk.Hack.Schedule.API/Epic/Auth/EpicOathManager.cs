@@ -74,9 +74,9 @@ namespace Gsk.Hack.Schedule.API.Epic.Auth
             }
         }
 
-        public string FetchSchedulingData(string accessToken)
+        public string FetchImmunizationData(string accessToken)
         {
-            const string patientUrl = "https://open-ic.epic.com/argonaut/api/FHIR/Argonaut/Practitioner/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB";
+            const string patientUrl = "https://open-ic.epic.com/argonaut/api/FHIR/Argonaut/Immunization/Tbt3KuCY0B5PSrJvCu2j-PlK.aiHsu2xUjUM8bWpetXoB";
 
             Dictionary<string, string> headers = new Dictionary<string, string>();
             headers.Add("Authorization", "Bearer " + accessToken);
