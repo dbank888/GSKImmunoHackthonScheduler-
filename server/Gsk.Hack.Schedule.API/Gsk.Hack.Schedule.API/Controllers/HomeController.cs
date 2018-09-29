@@ -18,6 +18,10 @@ namespace Gsk.Hack.Schedule.API.Controllers
 
         public ActionResult EpicCode([FromUri]string code)
         {
+            Cache.AuthToken.Instance().SetCode(code);
+
+            ViewBag.Code = code;
+
             return View();
         }
     }
